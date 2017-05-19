@@ -1,0 +1,124 @@
+<templateSet group="su/java">
+  <template name="/cd" value="/**&#10; * 包名: $className$&#10; * 描述: $DESC$ &#10; * 作者: $user$&#10; * 创建时间: $date$ $time$&#10; **/" description="添加类注释" toReformat="false" toShortenFQNames="true">
+    <variable name="className" expression="currentPackage()" defaultValue="" alwaysStopAt="false" />
+    <variable name="DESC" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="user" expression="user()" defaultValue="" alwaysStopAt="false" />
+    <variable name="date" expression="date()" defaultValue="" alwaysStopAt="false" />
+    <variable name="time" expression="time()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="lgv" value="private $VART$ get$VAR$(){&#10;    if ($VAR$ == null) {&#10;        $VAR$ = ($VART$)findViewById(R.id.$END$);&#10;    }&#10;    return $VAR$;&#10;} " description="lazy view getter" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;android.view.View&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="VART" expression="typeOfVariable(VAR)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="lgo" value="private $VART$ get$VAR$()&#10;{&#10;    if ($VAR$ == null) &#10;    {&#10;        $VAR$ = new $VART$($END$);&#10;    }&#10;    return $VAR$;&#10;} " description="lazy object getter" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;java.lang.Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="VART" expression="typeOfVariable(VAR)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="pubv" value="public void $NAME$($END$)&#10;{&#10;&#10;}" description="public void" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="cc" value="public interface $CLASS$Callback&#10;{&#10;    $END$&#10;} " description="public interface XXXCallback" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="fvbid" value="$VAR$ = ($TYPE$)findViewById(R.id.$END$);" description="findViewById" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;android.view.View&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="typeOfVariable(VAR)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="fun_private_void" value="private void $FUN$($PAR$){&#10;    $END$&#10;}" description="private void method()." toReformat="false" toShortenFQNames="true">
+    <variable name="FUN" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="if" value="if($INPUT$){&#10;    $END$    &#10;}" description="if(){}" toReformat="false" toShortenFQNames="true">
+    <variable name="INPUT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="if_else" value="if($INPUT$){&#10;    $END$&#10;}else{&#10;    &#10;}" description="if(){}else{}" toReformat="false" toShortenFQNames="true">
+    <variable name="INPUT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="if_else_if" value="if($INPUT$){&#10;    $END$&#10;}else if(){&#10;    &#10;}" description="if(){}else if(){}" toReformat="false" toShortenFQNames="true">
+    <variable name="INPUT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="else_if" value="else if($INPUT$){&#10;    $END$    &#10;}" description="else if(){}" toReformat="false" toShortenFQNames="true">
+    <variable name="INPUT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="else" value="else{&#10;    $END$    &#10;}" description="else{}" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="callback" value="private $FILE$Callback m$FILE$Callback;&#10;        &#10;private $FILE$Callback get$FILE$Callback(){&#10;    if (m$FILE$Callback == null)&#10;    {&#10;        m$FILE$Callback=new $FILE$Callback(){};&#10;    }&#10;    return m$FILE$Callback;&#10;}&#10;&#10;public void set$FILE$Callback($FILE$Callback callback){&#10;    this.m$FILE$Callback=callback;&#10;}&#10;        &#10;public interface $FILE$Callback{&#10;    $END$&#10;}" description="Define callback for current class." toReformat="false" toShortenFQNames="true">
+    <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="set_on_click_listener" value="$VAR$.setOnClickListener(new OnClickListener(){&#10;    public void onClick(View view){&#10;        $END$&#10;    }&#10;});" description="setOnClickListener(new OnClickListener(){})" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;android.view.View&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="var_public_static_final_int" value="public static final int $VAR$ = $END$;" description="public_static_final_int" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="var_private_static_final_int" value="private static final int $VAR$ = $END$;" description="private_static_final_int" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="var_public_static_final_String" value="public static final String $VAR$ = $END$;" description="public_static_final_String" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="var_private_static_final_String" value="private static final String $VAR$ = $END$;" description="private_static_final_String" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="fun_public_void" value="public void $FUN$($PAR$){&#10;    $END$&#10;}" description="public void method()." toReformat="false" toShortenFQNames="true">
+    <variable name="FUN" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,145 @@
+<templateSet group="su/xml">
+  <template name="ll_h_m_w" value="&lt;LinearLayout&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:orientation=&quot;horizontal&quot;&gt;&#10;    $END$&#10;&lt;/LinearLayout&gt;" description="LinearLayout/horizontal/match_parent/wrap_content." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="tv_w_w" value="&lt;TextView&#10;    android:layout_width=&quot;wrap_content&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:text=&quot;$VAR$&quot;&#10;    $END$/&gt;" description="Textview/wrap_content/wrap_content." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="id_tv" value="android:id=&quot;@+id/tv_$VAR$_$FILE_NAME$&quot;" description="Define id for TextView." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="id_iv" value="android:id=&quot;@+id/iv_$VAR$_$FILE_NAME$&quot;" description="Define id for ImageView." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="id_btn" value="android:id=&quot;@+id/btn_$VAR$_$FILE_NAME$&quot;" description="Define id for Button." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="id_rv" value="android:id=&quot;@+id/rv_$VAR$_$FILE_NAME$&quot;" description="Define id for RecyclerView." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="id_ll" value="android:id=&quot;@+id/ll_$VAR$_$FILE_NAME$&quot;" description="Define id for LinearLayout." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="ll_v_m_m" value="&lt;LinearLayout&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&#10;    android:orientation=&quot;vertical&quot;&gt;&#10;    $END$&#10;&lt;/LinearLayout&gt;" description="LinearLayout/vertical/match_parent/match_parent." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="ll_v_m_w" value="&lt;LinearLayout&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:orientation=&quot;vertical&quot;&gt;&#10;    $END$&#10;&lt;/LinearLayout&gt;" description="LinearLayout/vertical/match_parent/wrap_content." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="fl_m_w" value="&lt;FrameLayout&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&gt;&#10;    $END$&#10;&lt;/FrameLayout&gt;" description="FrameLayout/match_parent/wrap_content." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="container_m_m" value="&lt;FrameLayout&#10;    android:id=&quot;@+id/fl_container_$VAR$_$FILE$&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;/&gt;" description="container/match_parent/match_parent." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="snakeCase(String)" defaultValue="" alwaysStopAt="false" />
+    <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="fl_w_w" value="&lt;FrameLayout&#10;    android:layout_width=&quot;wrap_content&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&gt;&#10;    $END$&#10;&lt;/FrameLayout&gt;" description="FrameLayout/wrap_content/wrap_content." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="rl_m_m" value="&lt;RelativeLayout&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&gt;&#10;    $END$&#10;&lt;/RelativeLayout&gt;" description="RelativeLayout/match_parent/match_parent." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="tv_m_m" value="&lt;TextView&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&#10;    android:text=&quot;$VAR$&quot;&#10;    $END$/&gt; " description="Textview/match_parent/match_parent." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="id_fl" value="android:id=&quot;@+id/fl_$VAR$_$FILE_NAME$&quot;" description="Define id for FrameLayout." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="id_rl" value="android:id=&quot;@+id/rl_$VAR$_$FILE_NAME$&quot;" description="Define id for RelativeLayout." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="btn_m_w" value="&lt;Button&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:text=&quot;$VAR$&quot;&#10;    $END$/&gt; " description="Button/match_parent/wrap_content." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="btn_w_w" value="&lt;Button&#10;    android:layout_width=&quot;wrap_content&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:text=&quot;$VAR$&quot;&#10;    $END$/&gt; " description="Button/wrap_content/wrap_content." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="appbar" value="&lt;android.support.design.widget.AppBarLayout&#10;        android:layout_width=&quot;match_parent&quot;&#10;        android:layout_height=&quot;wrap_content&quot;&#10;        app:theme=&quot;@style/ThemeOverlay.AppCompat.Dark.ActionBar&quot;&gt;&#10;&#10;        &lt;android.support.v7.widget.Toolbar&#10;            android:id=&quot;@+id/toolbar_$FILE$&quot;&#10;            android:layout_width=&quot;match_parent&quot;&#10;            android:layout_height=&quot;?attr/actionBarSize&quot;&#10;            app:navigationIcon=&quot;?attr/homeAsUpIndicator&quot;&#10;            app:theme=&quot;@style/ThemeOverlay.AppCompat.Dark.ActionBar&quot;&#10;            app:popupTheme=&quot;@style/ThemeOverlay.AppCompat.Light&quot;/&gt;&#10;&lt;/android.support.design.widget.AppBarLayout&gt;" description="Appbar with Toolbar." toReformat="false" toShortenFQNames="true">
+    <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="container_m_w" value="&lt;FrameLayout&#10;    android:id=&quot;@+id/fl_container_$VAR$_$FILE$&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;/&gt;" description="container/match_parent/wrap_content." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="snakeCase(String)" defaultValue="" alwaysStopAt="false" />
+    <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="container_w_w" value="&lt;FrameLayout&#10;    android:id=&quot;@+id/fl_container_$VAR$_$FILE$&quot;&#10;    android:layout_width=&quot;wrap_content&quot;&#10;    android:layout_height=&quot;wrap_content&quot;/&gt;" description="container/wrap_content/wrap_content." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="snakeCase(String)" defaultValue="" alwaysStopAt="false" />
+    <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="id" value="android:id=&quot;@+id/$VAR$_$FILE_NAME$&quot;" description="Define id." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="loge" value="Log.e(&quot;===&gt;&quot;,$VAR$);" description="Log.e" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
