@@ -23,19 +23,7 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="pubv" value="public void $NAME$($END$)&#10;{&#10;&#10;}" description="public void" toReformat="false" toShortenFQNames="true">
-    <variable name="NAME" expression="methodName()" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="JAVA_CODE" value="true" />
-    </context>
-  </template>
-  <template name="cc" value="public interface $CLASS$Callback&#10;{&#10;    $END$&#10;} " description="public interface XXXCallback" toReformat="false" toShortenFQNames="true">
-    <variable name="CLASS" expression="className()" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="JAVA_CODE" value="true" />
-    </context>
-  </template>
-  <template name="fvbid" value="$VAR$ = ($TYPE$)findViewById(R.id.$END$);" description="findViewById" toReformat="false" toShortenFQNames="true">
+  <template name="find_view_by_id" value="$VAR$ = ($TYPE$)findViewById(R.id.$END$);" description="findViewById" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="variableOfType(&quot;android.view.View&quot;)" defaultValue="" alwaysStopAt="true" />
     <variable name="TYPE" expression="typeOfVariable(VAR)" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -63,17 +51,6 @@
   </template>
   <template name="if_else_if" value="if($INPUT$){&#10;    $END$&#10;}else if(){&#10;    &#10;}" description="if(){}else if(){}" toReformat="false" toShortenFQNames="true">
     <variable name="INPUT" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="JAVA_CODE" value="true" />
-    </context>
-  </template>
-  <template name="else_if" value="else if($INPUT$){&#10;    $END$    &#10;}" description="else if(){}" toReformat="false" toShortenFQNames="true">
-    <variable name="INPUT" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="JAVA_CODE" value="true" />
-    </context>
-  </template>
-  <template name="else" value="else{&#10;    $END$    &#10;}" description="else{}" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
@@ -117,6 +94,12 @@
   <template name="fun_public_void" value="public void $FUN$($PAR$){&#10;    $END$&#10;}" description="public void method()." toReformat="false" toShortenFQNames="true">
     <variable name="FUN" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="PAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="container" value="private FrameLayout m$VAR$Container;&#10;&#10;private FrameLayout get$VAR$Container(){&#10;    if(null==m$VAR$Container){&#10;        m$VAR$Container = (FrameLayout)findViewById(R.id.$END$);&#10;    }&#10;    return m$VAR$Container;&#10;}" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
