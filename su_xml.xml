@@ -127,14 +127,20 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="loge" value="Log.e(&quot;===&gt;&quot;,$VAR$);" description="Log.e" toReformat="false" toShortenFQNames="true">
-    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="JAVA_CODE" value="true" />
-    </context>
-  </template>
   <template name="tv_m_w" value="&lt;TextView&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:text=&quot;$VAR$&quot;&#10;    $END$/&gt; " description="Textview/match_parent/wrap_content." toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="rl_m_w" value="&lt;RelativeLayout&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&gt;&#10;    $END$&#10;&lt;/RelativeLayout&gt;" description="RelativeLayout/match_parent/match_parent." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="iv" value="&lt;ImageView&#10;    android:layout_width=&quot;$V1$&quot;&#10;    android:layout_height=&quot;$V2$&quot;/&gt;" description="ImageView." toReformat="false" toShortenFQNames="true">
+    <variable name="V1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="V2" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
