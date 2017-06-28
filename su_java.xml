@@ -1,16 +1,7 @@
 <templateSet group="su/java">
-  <template name="/cd" value="/**&#10; * 包名: $className$&#10; * 描述: $DESC$ &#10; * 作者: $user$&#10; * 创建时间: $date$ $time$&#10; **/" description="添加类注释" toReformat="false" toShortenFQNames="true">
-    <variable name="className" expression="currentPackage()" defaultValue="" alwaysStopAt="false" />
-    <variable name="DESC" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="user" expression="user()" defaultValue="" alwaysStopAt="false" />
-    <variable name="date" expression="date()" defaultValue="" alwaysStopAt="false" />
-    <variable name="time" expression="time()" defaultValue="" alwaysStopAt="false" />
-    <context>
-      <option name="JAVA_CODE" value="true" />
-    </context>
-  </template>
-  <template name="fun_private_void" value="private void $FUN$($PAR$){&#10;    $END$&#10;}" description="private void method()." toReformat="false" toShortenFQNames="true">
+  <template name="fun_private_void" value="private void $FUN$($PARTYPE$ $PAR$){&#10;    $END$&#10;}" description="private void method()." toReformat="false" toShortenFQNames="true">
     <variable name="FUN" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARTYPE" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="PAR" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_CODE" value="true" />
@@ -28,42 +19,73 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="if_else_if" value="if($INPUT1$){&#10;    $END$&#10;}else if($INPUT2$){&#10;    &#10;}" description="if(){}else if(){}" toReformat="false" toShortenFQNames="true">
-    <variable name="INPUT1" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="INPUT2" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="JAVA_CODE" value="true" />
-    </context>
-  </template>
-  <template name="callback" value="private $FILE$Callback m$FILE$Callback;&#10;&#10;public void set$FILE$Callback($FILE$Callback callback){&#10;    this.m$FILE$Callback=callback;&#10;}&#10;&#10;private $FILE$Callback get$FILE$Callback(){&#10;    if (m$FILE$Callback == null)&#10;    {&#10;        m$FILE$Callback=new $FILE$Callback(){};&#10;    }&#10;    return m$FILE$Callback;&#10;} &#10;        &#10;public interface $FILE$Callback{&#10;    $END$&#10;}" description="Define callback for current class." toReformat="false" toShortenFQNames="true">
+  <template name="callback" value="private $FILE$Callback mCallback$NAME$;&#10;&#10;public void setCallback$NAME$($FILE$Callback callback){&#10;    this.mCallback$NAME$=callback;&#10;}&#10;&#10;private $FILE$Callback getCallback$NAME$(){&#10;    if (mCallback$NAME$ == null)&#10;    {&#10;        mCallback$NAME$=new $FILE$Callback(){};&#10;    }&#10;    return mCallback$NAME$;&#10;} &#10;        &#10;public interface $FILE$Callback{&#10;    $END$&#10;}" description="Define callback for current class." toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="fileNameWithoutExtension()" alwaysStopAt="true" />
     <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="set_on_click_listener" value="$VAR$.setOnClickListener(new View.OnClickListener(){&#10;    public void onClick(View view){&#10;        $END$&#10;    }&#10;});" description="setOnClickListener(new OnClickListener(){})" toReformat="false" toShortenFQNames="true">
+  <template name="socl" value="$VAR$.setOnClickListener(new android.view.View.OnClickListener(){&#10;    public void onClick(View view){&#10;        $END$&#10;    }&#10;});" description="setOnClickListener(new OnClickListener(){})" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="variableOfType(&quot;android.view.View&quot;)" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="fun_public_void" value="public void $FUN$($PAR$){&#10;    $END$&#10;}" description="public void method()." toReformat="false" toShortenFQNames="true">
+  <template name="fun_public_void" value="public void $FUN$($PARTYPE$ $PAR$){&#10;    $END$&#10;}" description="public void method()." toReformat="false" toShortenFQNames="true">
     <variable name="FUN" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARTYPE" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="PAR" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="var_obj" value="private $TYPE$ m$NAME$$TYPE$;&#10;&#10;private $TYPE$ get$NAME$$TYPE$()&#10;{&#10;    if (m$NAME$$TYPE$ == null)&#10;    {&#10;        m$NAME$$TYPE$ =new $TYPE$($END$);&#10;    }&#10;    return m$NAME$$TYPE$;&#10;} " description="Define and get object member." toReformat="false" toShortenFQNames="true">
+  <template name="var_obj" value="private $TYPE$ m$NAME$;&#10;&#10;private $TYPE$ get$NAME$()&#10;{&#10;    if (m$NAME$ == null)&#10;    {&#10;        m$NAME$ =new $TYPE$($END$);&#10;    }&#10;    return m$NAME$;&#10;} " description="Define and get object member." toReformat="false" toShortenFQNames="true">
     <variable name="TYPE" expression="variableOfType(java.lang.Object)" defaultValue="" alwaysStopAt="true" />
-    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="TYPE" alwaysStopAt="true" />
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="var_view" value="private $TYPE$ m$NAME$$TYPE$;&#10;&#10;private $TYPE$ get$NAME$$TYPE$()&#10;{&#10;    if (m$NAME$$TYPE$ == null)&#10;    {&#10;        m$NAME$$TYPE$ = ($TYPE$)findViewById(R.id.$END$);&#10;    }&#10;    return m$NAME$$TYPE$;&#10;}  " description="Define and get view member." toReformat="false" toShortenFQNames="true">
+  <template name="var_view" value="private $TYPE$ m$TYPE$$NAME$;&#10;&#10;private $TYPE$ get$NAME$$TYPE$()&#10;{&#10;    if (m$NAME$$TYPE$ == null)&#10;    {&#10;        m$NAME$$TYPE$= ($TYPE$)findViewById(R.id.$END$);&#10;    }&#10;    return m$NAME$$TYPE$;&#10;}  " description="Define and get view member." toReformat="false" toShortenFQNames="true">
     <variable name="TYPE" expression="variableOfType(android.view.View)" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression=" " defaultValue="TYPE" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="fvbid" value="$VAR$ = ($TYPE$) findViewById(R.id.$END$);" description="var = (Type) findViewById(R.id.);" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(android.view.View)" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="typeOfVariable(VAR)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="fun_builder" value="public $CLASS$ $NAME$($PARM_TYPE$ $PARM$){&#10;    $END$&#10;    return this;&#10;}" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARM_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="lgv" value="private $TYPE$ get$VAR$()&#10;{&#10;    if ($VAR$ == null)&#10;    {&#10;        $VAR$ =($TYPE$)findViewById(R.id.$END$);&#10;    }&#10;    return $VAR$;&#10;} " description="Lazy view getter." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;android.view.View&quot;))" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="subtypes(typeOfVariable(VAR))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="lgo" value="private $TYPE$ get$VAR$()&#10;{&#10;    if ($VAR$ == null)&#10;    {&#10;        $VAR$ = new $TYPE$($END$);&#10;    }&#10;    return $VAR$;&#10;} " description="Lazy object getter." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;java.lang.Object&quot;))" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="subtypes(typeOfVariable(VAR))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="fun_init" value="private void init$FILE$(){&#10;    $END$&#10;}" description="Define  init method ." toReformat="false" toShortenFQNames="true">
+    <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
