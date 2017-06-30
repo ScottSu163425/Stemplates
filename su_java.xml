@@ -19,9 +19,8 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="callback" value="private $FILE$Callback mCallback$NAME$;&#10;&#10;public void setCallback$NAME$($FILE$Callback callback){&#10;    this.mCallback$NAME$=callback;&#10;}&#10;&#10;private $FILE$Callback getCallback$NAME$(){&#10;    if (mCallback$NAME$ == null)&#10;    {&#10;        mCallback$NAME$=new $FILE$Callback(){};&#10;    }&#10;    return mCallback$NAME$;&#10;} &#10;        &#10;public interface $FILE$Callback{&#10;    $END$&#10;}" description="Define callback for current class." toReformat="false" toShortenFQNames="true">
+  <template name="callback" value="private $NAME$Callback m$NAME$Callback;&#10;&#10;public void set$NAME$Callback($NAME$Callback callback){&#10;    this.m$NAME$Callback=callback;&#10;}&#10;&#10;private $NAME$Callback get$NAME$Callback(){&#10;    if (m$NAME$Callback == null)&#10;    {&#10;        m$NAME$Callback=new $NAME$Callback(){};&#10;    }&#10;    return m$NAME$Callback;&#10;} &#10;        &#10;public interface $NAME$Callback{&#10;    $END$&#10;}" description="Define callback for current class." toReformat="false" toShortenFQNames="true">
     <variable name="NAME" expression="" defaultValue="fileNameWithoutExtension()" alwaysStopAt="true" />
-    <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
@@ -47,7 +46,7 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="var_view" value="private $TYPE$ m$TYPE$$NAME$;&#10;&#10;private $TYPE$ get$NAME$$TYPE$()&#10;{&#10;    if (m$NAME$$TYPE$ == null)&#10;    {&#10;        m$NAME$$TYPE$= ($TYPE$)findViewById(R.id.$END$);&#10;    }&#10;    return m$NAME$$TYPE$;&#10;}  " description="Define and get view member." toReformat="false" toShortenFQNames="true">
+  <template name="var_view" value="private $TYPE$ m$NAME$;&#10;&#10;private $TYPE$ get$NAME$()&#10;{&#10;    if (m$NAME$ == null)&#10;    {&#10;        m$NAME$ = ($TYPE$)findViewById(R.id.$END$);&#10;    }&#10;    return m$NAME$;&#10;}  " description="Define and get view member." toReformat="false" toShortenFQNames="true">
     <variable name="TYPE" expression="variableOfType(android.view.View)" defaultValue="" alwaysStopAt="true" />
     <variable name="NAME" expression=" " defaultValue="TYPE" alwaysStopAt="true" />
     <context>
