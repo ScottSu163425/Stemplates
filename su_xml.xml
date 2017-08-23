@@ -71,4 +71,19 @@
       <option name="XML" value="true" />
     </context>
   </template>
+  <template name="text_tools" value="tools:text=&quot;$END$&quot;" description="tools:text." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="visibility_tools" value="tools:visibility=&quot;$END$&quot;" description="tools:visibility." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="src_tools" value="tools:src=&quot;$END$&quot;" description="tools:src." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
 </templateSet>
