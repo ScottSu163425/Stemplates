@@ -1,4 +1,4 @@
-<templateSet group="su/java">
+<templateSet group="su/Java(Android)">
   <template name="if" value="if($INPUT$){&#10;    $END$    &#10;}" description="if(){}" toReformat="false" toShortenFQNames="true">
     <variable name="INPUT" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -45,6 +45,19 @@
   </template>
   <template name="prsfs" value="private static final String $VAR$ = $END$;" description="private static final string." toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="starter" value="public static void start(android.app.Activity activity) {&#10;    activity.startActivity(getStartIntent(activity));&#10;}&#10;    &#10;public static android.content.Intent getStartIntent(android.content.Context context) {&#10;    Intent intent = new Intent(context, $CLASS$.class);&#10;    $END$&#10;    return intent;&#10;}&#10;    " description="Activity starter." toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="keyextra" value="private static final String KEY_EXTRA_$NAME$ = &quot;$FILE$.KEY_EXTRA_$NAME$&quot;;" description="Define static string field for Key Extra." toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="KEY_EXTRA" alwaysStopAt="true" />
+    <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
