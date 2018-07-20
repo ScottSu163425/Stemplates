@@ -11,16 +11,9 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
-  <template name="find_view" value="$VAR$ = ($TYPE$) findViewById(R.id.$END$);" description="Find view by id." toReformat="false" toShortenFQNames="true">
-    <variable name="VAR" expression="variableOfType(android.view.View)" defaultValue="" alwaysStopAt="true" />
+  <template name="fvbid" value="$VAR$ = ($TYPE$) findViewById(R.id.$END$);" description="Find view by id." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;android.view.View&quot;)" defaultValue="" alwaysStopAt="true" />
     <variable name="TYPE" expression="typeOfVariable(VAR)" defaultValue="" alwaysStopAt="false" />
-    <context>
-      <option name="JAVA_CODE" value="true" />
-    </context>
-  </template>
-  <template name="lgo" value="private $TYPE$ get$VAR$()&#10;{&#10;    if ($VAR$ == null)&#10;    {&#10;        $VAR$ = new $TYPE$($END$);&#10;    }&#10;    return $VAR$;&#10;} " description="Lazy object getter." toReformat="false" toShortenFQNames="true">
-    <variable name="VAR" expression="variableOfType(&quot;java.lang.Object&quot;))" defaultValue="" alwaysStopAt="true" />
-    <variable name="TYPE" expression="subtypes(typeOfVariable(VAR))" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
@@ -58,6 +51,42 @@
   <template name="keyextra" value="private static final String KEY_EXTRA_$NAME$ = &quot;$FILE$.KEY_EXTRA_$NAME$&quot;;" description="Define static string field for Key Extra." toReformat="false" toShortenFQNames="true">
     <variable name="NAME" expression="" defaultValue="KEY_EXTRA" alwaysStopAt="true" />
     <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="setclick" value="$FIELD$.setOnClickListener(new android.view.View.OnClickListener(){&#10;        @Override&#10;        public void onClick(android.view.View view) {&#10;            $END$&#10;        }&#10;});" description="Set OnClickListener for a View Field." toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD" expression="suggestFirstVariableName(&quot;android.view.View&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="singleton" value="    private static $CLASS$ sInstance;&#10;&#10;    public static $CLASS$ getInstance() {&#10;        if (sInstance == null) {&#10;            synchronized ($CLASS$.class) {&#10;                if (sInstance == null) {&#10;                    sInstance = new $CLASS$();&#10;                }&#10;            }&#10;        }&#10;        return sInstance;&#10;    }&#10;&#10;    private $CLASS$() {&#10;        $END$&#10;    }" description="Define singleton." toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="ifn" value="if ($VAR$ == null) {&#10;    $END$            &#10;}" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="ifnn" value="if ($VAR$ != null) {&#10;    $END$            &#10;}" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="ifes" value="if (android.text.TextUtils.isEmpty($VAR$)) {&#10;    $END$            &#10;}" description="If String is empty ." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;String&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="ifel" value="if ($VAR$ == null || $VAR$.isEmpty()) {&#10;    $END$            &#10;}" description="If list is empty ." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;List&quot;)" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_CODE" value="true" />
     </context>
